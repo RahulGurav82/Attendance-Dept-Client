@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import BiometricCapture from './BiometricCapture';
+import { endpoints } from '../config/api';
 
 const DepartmentDashboard = () => {
     const [department, setDepartment] = useState(null);
@@ -32,7 +33,7 @@ const DepartmentDashboard = () => {
 
     const fetchDepartmentData = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/department/profile');
+            const response = await axios.get(endpoints.department.profile);
             if (response.data.success) {
                 setDepartment(response.data.department);
             }
@@ -48,7 +49,7 @@ const DepartmentDashboard = () => {
 
     const fetchStudents = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/students/all');
+            const response = await axios.get(endpoints.students.all);
             setStudents(response.data.students);
         } catch (error) {
             console.error('Failed to fetch students:', error);
@@ -73,7 +74,7 @@ const DepartmentDashboard = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/students/add', formData);
+            const response = await axios.post(endpoints.students.add, formData);
 
             if (response.data.success) {
                 setStudents([...students, response.data.student]);

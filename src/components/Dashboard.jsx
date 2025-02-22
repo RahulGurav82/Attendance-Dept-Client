@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DepartmentForm from './DepartmentForm';
 import DepartmentList from './DepartmentList';
+import { endpoints } from '../config/api';
 
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState(null);
@@ -21,7 +22,7 @@ const Dashboard = () => {
         }
 
         // Fetch dashboard data
-        const dashboardResponse = await fetch('http://localhost:5000/api/auth/dashboard', {
+        const dashboardResponse = await fetch(endpoints.auth.dashboard, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -35,7 +36,7 @@ const Dashboard = () => {
         setDashboardData(dashData);
 
         // Fetch departments
-        const departmentsResponse = await fetch('http://localhost:5000/api/department/all');
+        const departmentsResponse = await fetch(endpoints.department.all);
         if (!departmentsResponse.ok) {
           throw new Error('Failed to fetch departments');
         }

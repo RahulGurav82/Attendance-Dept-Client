@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import { endpoints } from '../config/api';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ const Login = () => {
     
     try {
       // Here you'll integrate with your backend API
-      const response = await fetch('http://localhost:5000/api/auth/login', {
+      const response = await fetch(endpoints.auth.login, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

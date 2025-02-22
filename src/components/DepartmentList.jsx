@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { endpoints } from '../config/api';
 
 const DepartmentList = ({ departments }) => {
     const [showLoginForm, setShowLoginForm] = useState(false);
@@ -21,7 +22,7 @@ const DepartmentList = ({ departments }) => {
     const handleLoginSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/department/login', loginData);
+            const response = await axios.post(endpoints.department.login, loginData);
             if (response.data.success) {
                 localStorage.setItem('deptToken', response.data.token);
                 navigate('/department-dashboard');

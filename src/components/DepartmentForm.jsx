@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { endpoints } from '../config/api';
 
 const DepartmentForm = ({ onDepartmentCreated, onClose }) => {
     const [formData, setFormData] = useState({
@@ -20,7 +21,7 @@ const DepartmentForm = ({ onDepartmentCreated, onClose }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/department/create', formData);
+            const response = await axios.post(endpoints.department.create, formData);
             if (response.data.success) {
                 onDepartmentCreated(response.data.department);
                 onClose();
