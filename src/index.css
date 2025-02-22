@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can keep your global styles here as well */
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 400%;
+    -webkit-animation: gradient 8s ease infinite;
+    animation: gradient 8s ease infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  animation: float 8s ease-in-out infinite;
+}
+
+.bubble:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  right: 15%;
+  top: 40%;
+  animation-delay: -2s;
+}
+
+.bubble:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  left: 20%;
+  bottom: 20%;
+  animation-delay: -4s;
+}
+
+.bubble:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  right: 25%;
+  bottom: 30%;
+  animation-delay: -6s;
+}

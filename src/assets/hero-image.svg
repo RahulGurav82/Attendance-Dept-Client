@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="600px" viewBox="0 0 800 600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="gradient">
+            <stop stop-color="#4F46E5" offset="0%"/>
+            <stop stop-color="#7C3AED" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#F3F4F6" x="0" y="0" width="800" height="600"/>
+        <g transform="translate(100, 50)">
+            <!-- Calendar Background -->
+            <rect fill="white" x="0" y="0" width="600" height="500" rx="20"/>
+            <rect fill="url(#gradient)" x="0" y="0" width="600" height="100" rx="20"/>
+            
+            <!-- Calendar Header -->
+            <text font-family="Arial" font-size="24" font-weight="bold" fill="white" x="20" y="60">
+                Attendance Dashboard
+            </text>
+            
+            <!-- Calendar Grid -->
+            <g transform="translate(20, 120)">
+                <!-- Grid Headers -->
+                <text font-family="Arial" font-size="14" fill="#6B7280" x="10" y="30">Mon</text>
+                <text font-family="Arial" font-size="14" fill="#6B7280" x="100" y="30">Tue</text>
+                <text font-family="Arial" font-size="14" fill="#6B7280" x="190" y="30">Wed</text>
+                <text font-family="Arial" font-size="14" fill="#6B7280" x="280" y="30">Thu</text>
+                <text font-family="Arial" font-size="14" fill="#6B7280" x="370" y="30">Fri</text>
+                
+                <!-- Grid Cells -->
+                <g transform="translate(0, 50)">
+                    <!-- Row 1 -->
+                    <rect fill="#EEF2FF" x="0" y="0" width="80" height="80" rx="10"/>
+                    <rect fill="#E0E7FF" x="90" y="0" width="80" height="80" rx="10"/>
+                    <rect fill="#EEF2FF" x="180" y="0" width="80" height="80" rx="10"/>
+                    <rect fill="#E0E7FF" x="270" y="0" width="80" height="80" rx="10"/>
+                    <rect fill="#EEF2FF" x="360" y="0" width="80" height="80" rx="10"/>
+                    
+                    <!-- Row 2 -->
+                    <rect fill="#E0E7FF" x="0" y="90" width="80" height="80" rx="10"/>
+                    <rect fill="#EEF2FF" x="90" y="90" width="80" height="80" rx="10"/>
+                    <rect fill="#E0E7FF" x="180" y="90" width="80" height="80" rx="10"/>
+                    <rect fill="#EEF2FF" x="270" y="90" width="80" height="80" rx="10"/>
+                    <rect fill="#E0E7FF" x="360" y="90" width="80" height="80" rx="10"/>
+                    
+                    <!-- Row 3 -->
+                    <rect fill="#EEF2FF" x="0" y="180" width="80" height="80" rx="10"/>
+                    <rect fill="#E0E7FF" x="90" y="180" width="80" height="80" rx="10"/>
+                    <rect fill="#EEF2FF" x="180" y="180" width="80" height="80" rx="10"/>
+                    <rect fill="#E0E7FF" x="270" y="180" width="80" height="80" rx="10"/>
+                    <rect fill="#EEF2FF" x="360" y="180" width="80" height="80" rx="10"/>
+                </g>
+            </g>
+            
+            <!-- Stats Section -->
+            <g transform="translate(450, 120)">
+                <rect fill="#F3F4F6" x="0" y="0" width="130" height="340" rx="10"/>
+                <text font-family="Arial" font-size="16" font-weight="bold" fill="#374151" x="20" y="40">Statistics</text>
+                
+                <!-- Stats Bars -->
+                <rect fill="#4F46E5" x="20" y="60" width="90" height="10" rx="5"/>
+                <rect fill="#7C3AED" x="20" y="80" width="70" height="10" rx="5"/>
+                <rect fill="#4F46E5" x="20" y="100" width="85" height="10" rx="5"/>
+                <rect fill="#7C3AED" x="20" y="120" width="60" height="10" rx="5"/>
+            </g>
+        </g>
+    </g>
+</svg>
